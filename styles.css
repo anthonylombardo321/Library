@@ -1,0 +1,249 @@
+:root {
+    --red: #c03a2b;
+    --yellow: #e4c54c;
+    --winter-hazel: #cdbf87;
+    --navy-blue: #000080;
+    --verdigris: #5C5C3C;
+    --baby-blue: #89CFF0;
+    --green: #50C878;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Side Panel */
+.side-panel {
+    background-color: var(--winter-hazel);
+    padding: 2rem;
+    width: 400px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.copyright {
+    margin-top: .5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.copyright a {
+    text-decoration: none;
+    color: var(--verdigris)
+}
+.copyright a:hover {
+    color: white;
+}
+
+#book-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: .5rem;
+}
+
+.book-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+
+}
+
+input[type="text"], input[type="number"] {
+    line-height: 1.5rem;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+/* Custom Checkbox */
+.check-label {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+    margin-left: 5px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 2px solid black;
+    /* Adjusts the position of the checkboxes on the text baseline */
+    vertical-align: -2px;
+}
+
+input[type="checkbox"]::before {
+    content: "✔️";
+    position: absolute;
+    font-size: 1.3rem;
+    right: -4px;
+    top: -.2em;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--navy-blue);
+}
+
+input[type="checkbox"]:checked::before {
+    visibility: visible;
+}
+
+input[type="checkbox"]:hover {
+    background-color: var(--navy-blue);
+}
+
+.submit-container {
+    margin-top: .7rem;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-book {
+    width: 150px;
+    padding: 1rem;
+    border-radius: 20px;
+    text-align: center;
+    background-color: var(--navy-blue);
+    color: white;
+    margin-top: 10px;
+}
+
+.info-header {
+    text-align: center;
+    margin-top: 1.2rem;
+}
+
+.library-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1.5rem;
+}
+/* =============================================== */
+/* Main Section (Table) */
+main {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 300px);
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--baby-blue);
+    overflow: scroll;
+}
+
+table {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+}
+
+th {
+    font-size: large;
+}
+table, td {
+    text-align: center;
+}
+
+tbody td {
+    padding: 10px;
+}
+
+.page-counter {
+    display: flex;
+    padding-top: 1rem;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.increase-count, .decrease-count {
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.status-button, .delete-button {
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: var(--red);
+    color: white;
+    font-weight: bold;
+}
+
+.read {
+    background-color: var(--green);
+}
+/* ================================================== */
+/* Media Queries */
+@media screen and (max-width: 935px) {
+    body {
+        flex-direction: column;
+    }
+
+    .side-panel {
+        width: 100%;
+    }
+
+    .check-label {
+        justify-content: center;
+    }
+
+    .library-info {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    main, table {
+        width: 100%;
+    }
+
+    #book-form {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        flex-flow: row wrap;
+        gap: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    main {
+        padding-right: .5rem;
+    }
+    .library-info {
+        flex-direction: column;
+        flex-flow: row wrap;
+    }
+
+    .book-input {
+        width: 9rem;
+    }
+}

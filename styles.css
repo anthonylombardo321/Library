@@ -16,6 +16,7 @@
 
 html, body {
     height: 100%;
+    font-size: 1rem;
 }
 
 body {
@@ -234,7 +235,7 @@ tbody td {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 640px) {
     main {
         padding-right: .5rem;
     }

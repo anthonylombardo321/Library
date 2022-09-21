@@ -188,3 +188,5 @@ bookList.addEventListener("click", (e) => {
     }
     displayBooksInLibrary();
 });
+
+displayBooksInLibrary();
